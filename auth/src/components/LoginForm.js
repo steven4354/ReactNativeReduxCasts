@@ -59,7 +59,7 @@ class LoginForm extends Component {
 
         <CardSection>
           <Input
-            secureTextEntry
+            secureTextEntry //-> just listing this prop assigns it as truthy (omitted -> falsy)
             placeholder="password"
             label="Password"
             value={this.state.password}
