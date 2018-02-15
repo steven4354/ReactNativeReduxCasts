@@ -5,7 +5,7 @@ import { Header, Button, Spinner } from './components/common';
 import LoginForm from './components/LoginForm';
 
 class App extends Component {
-  state = { loggedIn: null };
+  state = { loggedIn: null }; //-> this is null for the case when we don't know if you are logged in/out yet (i.e. on app load up) -> spinner
 
   componentWillMount() {
     
@@ -21,7 +21,9 @@ class App extends Component {
     
     //this is a eventListener, eventHandler function 
     //the callback is called whenever the login or the registration function is called 
-    //when you login or register a user object is passed back in this function (if you log out the user object is empty - falsy)
+    //when you login or register a user object is passed back in this function 
+    //even when you leave app and come back you are still logged in (the user object is still kept in app)
+    //if you log out the user object is empty - falsy
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({ loggedIn: true });
