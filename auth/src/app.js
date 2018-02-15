@@ -8,6 +8,8 @@ class App extends Component {
   state = { loggedIn: null };
 
   componentWillMount() {
+    
+    //obtain firebase details from auth section in website 
     firebase.initializeApp({
       apiKey: 'AIzaSyBtxMY4K6uHxv_2e3GD-FWAD2ACX6lPVRE',
       authDomain: 'authentication-70a18.firebaseapp.com',
