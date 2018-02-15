@@ -4,7 +4,7 @@ import firebase from 'firebase';
 import { Button, Card, CardSection, Input, Spinner } from './common';
 
 class LoginForm extends Component {
-  state = { email: '', password: '', error: '', loading: false };
+  state = { email: '', password: '', error: '', loading: false }; //loading is for the spinner for the button (see renderButton function)
 
   onButtonPress() {
     const { email, password } = this.state;
