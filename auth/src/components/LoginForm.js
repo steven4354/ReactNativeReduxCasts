@@ -11,6 +11,7 @@ class LoginForm extends Component {
 
     this.setState({ error: '', loading: true });
 
+    //logins or if fail then create user
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(this.onLoginSuccess.bind(this))
       .catch(() => {
@@ -72,7 +73,7 @@ class LoginForm extends Component {
         </Text>
 
         <CardSection>
-          {this.renderButton()}
+          {this.renderButton()} //-> allows usage of full if statements!
         </CardSection>
       </Card>
     );
