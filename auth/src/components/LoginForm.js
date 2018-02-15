@@ -17,7 +17,7 @@ class LoginForm extends Component {
       .catch(() => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
           .then(this.onLoginSuccess.bind(this))
-          .catch(this.onLoginFail.bind(this));
+          .catch(this.onLoginFail.bind(this)); //if the user can be created as well then set an error
       });
   }
 
@@ -69,7 +69,7 @@ class LoginForm extends Component {
         </CardSection>
 
         <Text style={styles.errorTextStyle}>
-          {this.state.error}
+          {this.state.error} //-> without a height and width style this will be invisible initially
         </Text>
 
         <CardSection>
