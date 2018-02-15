@@ -13,6 +13,9 @@ class LoginForm extends Component {
 
     //logins or if fail then create user
     firebase.auth().signInWithEmailAndPassword(email, password)
+      
+      //a method is used to set the state for login fail and success -> in order to remove the error message, email and pass input
+      //this removal tells user that the login function has ran and not to press login a bunch of times
       .then(this.onLoginSuccess.bind(this))
       .catch(() => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
