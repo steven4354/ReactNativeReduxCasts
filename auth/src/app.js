@@ -18,7 +18,10 @@ class App extends Component {
       storageBucket: 'authentication-70a18.appspot.com',
       messagingSenderId: '682333809338'
     });
-
+    
+    //this is a eventListener, eventHandler function 
+    //the callback is called whenever the login or the registration function is called 
+    //when you login or register a user object is passed back in this function (if you log out the user object is empty - falsy)
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({ loggedIn: true });
